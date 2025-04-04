@@ -3,7 +3,7 @@ using Oebm_Producer.Factorys;
 
 namespace Oebm_Producer.Mediators
 {
-    public class AddRabbitMQContextCallbackMediator<T>
+    public class AddRabbitMQContextCallbackWrapper<T>
     {
         public AMQPContextModel CreateChanel(string hostname, string username, string password)
         {

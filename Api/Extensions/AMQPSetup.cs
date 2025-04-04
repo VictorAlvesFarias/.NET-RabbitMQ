@@ -13,9 +13,9 @@ namespace Oebm_Producer.Extensions
 {
     public static class AMQPSetup
     {
-        public static void AddRabbitMQContext<T>(this IServiceCollection services, Expression<Func<AddRabbitMQContextCallbackMediator<T>, AMQPContextModel>> func)
+        public static void AddRabbitMQContext<T>(this IServiceCollection services, Expression<Func<AddRabbitMQContextCallbackWrapper<T>, AMQPContextModel>> func)
         {
-            var context = func.Compile()(new AddRabbitMQContextCallbackMediator<T>());
+            var context = func.Compile()(new AddRabbitMQContextCallbackWrapper<T>());
 
             AMQPContext.AMQPContextModelList.Add(context);
         }
